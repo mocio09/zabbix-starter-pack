@@ -17,8 +17,8 @@ remote_hosts_config = zapi.host.get({
 })
 
 # Convert lists of dictionaries to sets of tuples
-local_set = set((host["host"], host["ip"]) for host in local_hosts_config)
-remote_set = set((host["host"], host["ip"]) for host in remote_hosts_config)
+local_set = set((host) for host in local_hosts_config)
+remote_set = set((host) for host in remote_hosts_config)
 
 # Find elements in local, but not in remote, these should be added to keep in sync local config in git with remote
 local_only = local_set - remote_set

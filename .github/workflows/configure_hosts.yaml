@@ -1,0 +1,27 @@
+name: Create Hosts
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      ZABBIX_LOGIN_USER: ${{ secrets.ZABBIX_LOGIN_USER }}
+      ZABBIX_LOGIN_PASSWORD: ${{ secrets.ZABBIX_LOGIN_PASSWORD }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10' 
+
+    - name: Create Hosts
+      run: |
+        cd hosts
+        python -m pip install requirements.txt
+        python3 add_hosts.py

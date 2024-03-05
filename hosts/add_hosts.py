@@ -16,18 +16,12 @@ remote_hosts_config = zapi.host.get({
     "selectGroups": ["groupid", "name"]
 })
 
-# Convert lists of dictionaries to sets of tuples
-local_set = set((host["hostid"]) for host in local_hosts_config)
-remote_set = set((host) for host in remote_hosts_config)
-
-local_only = [d for d in local_set if not any(d == d2 for d2 in remote_hosts_config)]
-remote_only = [d for d in remote_hosts_config if not any(d == d1 for d1 in local_set)]
-
 # Find elements in local, but not in remote, these should be added to keep in sync local config in git with remote
-local_only = local_set - remote_set
+local_only = [d for d in local_hosts_config if not any(d == d2 for d2 in remote_hosts_config)]
 
 # Find elements in remote but not in local, , these should be deleted to keep in sync local config in git with remote
-remote_only = remote_set - local_set
+remote_only = [d for d in remote_hosts_config if not any(d == d1 for d1 in local_hosts_config)]
+
 
 for host in local_only:
     result = zapi.host.create(host)

@@ -3,8 +3,10 @@ name: Terraform Create Infrastructure
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    paths:
+      - 'secure-zone/**'
+  workflow_dispatch:
+  
 
 jobs:
   build:

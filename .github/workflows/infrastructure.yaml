@@ -1,10 +1,6 @@
 name: Terraform Create Infrastructure
 
 on:
-  push:
-    branches: [ main ]
-    paths:
-      - 'secure-zone/**'
   workflow_dispatch:
   
 
@@ -30,3 +26,6 @@ jobs:
         cd secure-zone
         terraform init
         terraform plan
+
+    - name: Apply Terraform
+      run: terraform apply -auto-approve

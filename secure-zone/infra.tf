@@ -1,4 +1,10 @@
 terraform {
+    backend "s3" {
+      bucket = "zabbix-demo-project-terraform-state"
+      key    = "terraform.tfstate"
+      region = "eu-west-2"
+    }
+
     required_providers {
       aws = {
         source = "hashicorp/aws"

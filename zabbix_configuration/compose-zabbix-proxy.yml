@@ -1,0 +1,10 @@
+version: '3'
+services:
+  zabbix-proxy-sqlite3:
+    image: zabbix/zabbix-proxy-sqlite3:latest
+    environment:
+      ZBX_HOSTNAME: 'zabbix-proxy'
+      ZBX_SERVER_HOST: '18.133.139.129'
+      ZBX_PROXYMODE: '0'
+    ports:
+      - "10051:10051"

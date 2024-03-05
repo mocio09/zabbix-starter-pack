@@ -1,0 +1,42 @@
+[
+    {
+        "host": "NetHost2",
+        "interfaces": [
+            {
+                "type": 2,
+                "main": 1,
+                "useip": 1,
+                "ip": "10.0.10.208",
+                "dns": "",
+                "port": "161",
+                "snmp_community": "public",
+                "snmp_version": 0 
+            }
+        ],
+        "groups": [
+            {
+                "groupid": "2"
+            }
+        ]
+    },
+    {
+        "host": "NetHost",
+        "interfaces": [
+            {
+                "type": 2,
+                "main": 1,
+                "useip": 1,
+                "ip": "10.0.10.208",
+                "dns": "",
+                "port": "161",
+                "snmp_community": "public",
+                "snmp_version": 0 
+            }
+        ],
+        "groups": [
+            {
+                "groupid": "2"
+            }
+        ]
+    }
+]

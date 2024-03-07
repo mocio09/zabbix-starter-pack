@@ -8,7 +8,7 @@ Repository Structure:
 
 -`secure_zone` - terraform configuration for deploying the 1 VPC, 2 subnets(Public and Private), 1 Internet gateway, 1 security group, In addition, will create Custom Route Tables and associate them with subnets with NAT gateway support. EC2 instances are configured with a startup script in order to enable SNMP service. 
 
-CI/CD Workflows
+## CI/CD Workflows
 
 - `.github/workflows/configure_hosts.yaml` - CI file used to deploy the configuration on the Zabbix server via the python script
 - `.github/workflows/infrastructure-dry-run.yaml` - Terraform Dry Run . When you will raise a pull Request it does a Dry Run (terraform plan) to make sure you do not break the infrastructure configuration with your changes and you can see how your changes will affect the infrastructure.

@@ -1,4 +1,4 @@
-name: Terraform Create Infrastructure
+name: Terraform Infrastructure DRYRUN
 
 on:
   pull_request:

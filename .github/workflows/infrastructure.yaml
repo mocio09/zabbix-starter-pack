@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'secure-zone/**'
+      - 'secure_zone/**'
 
 jobs:
   build:
@@ -25,11 +25,11 @@ jobs:
 
     - name: Initialize Terraform
       run: |
-        cd secure-zone
+        cd secure_zone
         terraform init
         terraform plan
 
     - name: Apply Terraform
       run: |
-        cd secure-zone
+        cd secure_zone
         terraform apply -auto-approve

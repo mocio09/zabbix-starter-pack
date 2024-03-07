@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - 'secure-zone/**'
+      - 'secure_zone/**'
   workflow_dispatch:
   
 
@@ -29,6 +29,6 @@ jobs:
 
     - name: Initialize Terraform
       run: |
-        cd secure-zone
+        cd secure_zone
         terraform init
         terraform plan

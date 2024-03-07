@@ -21,6 +21,6 @@ jobs:
 
     - name: Create Hosts
       run: |
-        cd hosts
+        cd zabbix_hosts
         pip install -r requirements.txt
         python3 add_hosts.py
